@@ -1,31 +1,16 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html lang="en" th:replace="~{base::parent(~{::#content},~{::title},~{::script})}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Page</title>
-    <link rel="stylesheet" data-th-href="@{/css/output.css}">
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.css" rel="stylesheet" />
-
+<title>Home Page</title>
 </head>
-
 <body>
-    <div class="bg-gray-200 w-1/2 p-4 mx-auto mt-4 flex flex-col space-y-3  items-center">
-        <h1 class="text-3xl font-bold" data-th-text="${name}">this is home page</h1>
-        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio voluptatem eius placeat aspernatur porro! Nam
-            ex pariatur possimus, illum in dolor reprehenderit dignissimos atque placeat numquam, architecto tempora
-            eos? Aliquam!</p>
-
-        <div>
-            <button class="px-3 py-3 rounded bg-blue-700 text-white hover:bg-blue-600">Click Here</button>
-        </div>
+    <div id="content">
+        <h1>Welcome to Home page</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, quia!</p>
     </div>
-    <!-- flow bite content here -->
 
-
-
-    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.1/dist/flowbite.min.js"></script>
+    <script>
+        console.log("Home Page");
+    </script>
 </body>
-
 </html>
