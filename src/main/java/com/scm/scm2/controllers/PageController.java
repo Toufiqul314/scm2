@@ -13,4 +13,15 @@ public class PageController {
         return "home";
     }
 
+    //about route
+    @RequestMapping("/about")
+    public String aboutPage(Model model) {
+        model.addAttribute("isLogin",true);
+        return "about";
+    }
+    //services route
+    @RequestMapping("/services")
+    public String servicesPage(){
+        return "services";
+    }
 }
