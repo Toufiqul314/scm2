@@ -24,4 +24,22 @@ public class PageController {
     public String servicesPage(){
         return "services";
     }
+
+    //contact page
+    @RequestMapping("/contact")
+    public String contactPage(){
+        return "contact";
+    }
+
+    //login page
+    @RequestMapping("/login")
+    public String loginPage(){
+        return "login";
+    }
+
+    //signup page
+    @RequestMapping("/signup")
+    public String signupPage(){
+        return "signup";
+    }
 }
