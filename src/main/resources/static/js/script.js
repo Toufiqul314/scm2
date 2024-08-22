@@ -14,7 +14,7 @@ document.querySelector('html').classList.add(currentTheme);
 //set the listener to change theme button
 const changeThemeButton=document.querySelector('#theme_change_button');
 //change the text of button
-changeThemeButton.querySelector('span').textContent = currentTheme === 'light' ? 'Light' : 'Dark';
+changeThemeButton.querySelector('span').textContent = currentTheme === 'light' ? 'Dark' : 'Light';
 changeThemeButton.addEventListener('click', (event) => {
     const oldTheme=currentTheme;
     // console.log("clicked");
@@ -36,7 +36,7 @@ changeThemeButton.addEventListener('click', (event) => {
     //set the current theme
     document.querySelector('html').classList.add(currentTheme);
     //change the text of button
-    changeThemeButton.querySelector('span').textContent = currentTheme === 'light' ? 'Light' : 'Dark';
+    changeThemeButton.querySelector('span').textContent = currentTheme === 'light' ? 'Dark' : 'Light';
     
 })
 
