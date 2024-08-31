@@ -3,6 +3,7 @@ package com.scm.scm2.controllers;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -40,7 +41,7 @@ public class PageController {
     }
 
     //contact page
-    @RequestMapping("/contact")
+    @GetMapping("/contact")
     public String contactPage(){
         return "contact";
     }
@@ -52,7 +53,7 @@ public class PageController {
     }
 
     //signup page
-    @RequestMapping("/signup")
+    @GetMapping("/signup")
     public String signupPage(Model model){
 
         UserForm userForm = new UserForm();

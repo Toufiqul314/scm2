@@ -5,8 +5,64 @@
 </head>
 <body>
     <div id="content">
-        <h1>Welcome to Login page</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci, quia!</p>
+    
+        <div class="grid grid-cols-3 mt-4">
+            <div class="col-span-4 md:col-span-2 lg:col-span-3 xl:col-span-4"></div>
+            <div class="col-span-12 md:col-span-4 lg:col-span-6 xl:col-start-4">
+            
+                <!-- card  -->
+                <div
+                    class="block p-6 bg-white border border-t-[10px] border-green-600 rounded-lg shadow hover:bg-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:hover:bg-gray-700">
+
+                    <!-- message here  -->
+                     <div data-th-replace="message::messagebox"></div>
+
+                    <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
+                        LogIn Here</h5>
+                        <p class="font-normal text-gray-400 dark:text-gray-400">Start managing contacts on cloud...</p>
+                        
+                        <div class="text-red-600 text-center my-3" th:if="${param.error}">
+                            Invalid username and password.</div>
+                        <div class="text-green-600 text-center my-3" th:if="${param.logout}">
+                            You have been logged out.</div>
+
+                        <!-- this is form  -->
+                        <form data-th-object="${userForm}"
+                         data-th-action="@{'/authenticate'}" method="post" class="mt-5">
+
+                            <!-- username field  -->
+                            <div class="mb-3">
+                                <label for="email"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                                    email</label>
+                                <input 
+                                name="email"
+                                 type="email" id="email"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="name@flowbite.com" required />
+                            </div>
+                            <!-- password field  -->
+                            <div class="mb-3">
+                                <label for="password"
+                                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Your
+                                    Password</label>
+                                <input name="password" type="password" id="password"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    placeholder="Enter your password" required />
+                            </div>
+
+                            
+                             <!-- buttons  -->
+                            <div class="mb-3 flex justify-center space-x-3">
+                             <Button type="submit" class="px-3 py-2 rounded bg-gray-800 text-white dark:bg-blue dark:hover:bg-blue-800 hover:bg-gray-900">Login</Button>
+                             <Button type="reset" class="px-3 py-2 rounded bg-gray-800 text-white dark:bg-blue dark:hover:bg-blue-800 hover:bg-gray-900">Reset</Button>
+                            </div>
+                        </form>
+                </div>
+            </div>
+
+        </div>
+    
     </div>
 
     <script>
